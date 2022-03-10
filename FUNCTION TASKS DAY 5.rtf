@@ -1,0 +1,406 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang16393{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue0;\red41\green41\blue41;\red255\green255\blue255;}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\sa160\sl240\slmult1\lang9\b\f0\fs28 Do the below programs in anonymous function & IIFE\par
+\b0\par
+\b Print odd numbers in an array anonymous function\par
+\b0\par
+var number = [2, 3, 4, 1, 51, 6, 7]\par
+var oddno = []\par
+var oddnumber = function(number) \{\par
+    for (var i = 0; i < number.length; i++) \{\par
+        if (number[i] % 2 === 1)\par
+            oddno.push(number[i])\par
+    \}\par
+    return oddno\par
+\}\par
+console.log(oddnumber(number))\par
+\par
+\b Print odd numbers in an array IIFE function\par
+\b0\par
+var number = [2, 3, 4, 1, 51, 6, 7]\par
+var oddno = [];\par
+(function(number) \{\par
+    for (i = 0; i < number.length; i++) \{\par
+        if (number[i] % 2 === 1)\par
+            oddno.push(number[i])\par
+    \}\par
+    console.log(oddno)\par
+\})(number);\par
+\par
+\b Convert all the strings to title caps in a string array anonymous\par
+\b0 function\par
+var string = ["hi", "welcome", "guvi"]\par
+var char\par
+var upperstring = []\par
+var result = []\par
+var titlecaps = function(string) \{\par
+    for (var i = 0; i < string.length; i++) \{\par
+\par
+        char = [...string[i]]\par
+\par
+        for (var j = 0; j < char.length; j++) \{\par
+            let index = char.indexOf(char[j]);\par
+\par
+            if (index == 0) \{\par
+                var first_string = char[j].toUpperCase()\par
+                upperstring.push(first_string)\par
+            \} else \{\par
+                var last_string = char[j]\par
+                upperstring.push(last_string)\par
+            \}\par
+        \}\par
+        var join = upperstring.join("")\par
+        result.push(join)\par
+        upperstring.splice(0, upperstring.length);\par
+\par
+    \}\par
+    return result\par
+\}\par
+\par
+console.log(titlecaps(string))\par
+\par
+\b Convert all the strings to title caps in a string array IFFE function\par
+\b0\par
+var string = ["hi", "welcome", "guvi"]\par
+\par
+var char\par
+var upperstring = []\par
+var result = [];\par
+(function(string) \{\par
+    for (var i = 0; i < string.length; i++) \{\par
+\par
+        char = [...string[i]]\par
+\par
+        for (var j = 0; j < char.length; j++) \{\par
+            let index = char.indexOf(char[j]);\par
+\par
+            if (index == 0) \{\par
+                var first_string = char[j].toUpperCase()\par
+                upperstring.push(first_string)\par
+            \} else \{\par
+                var last_string = char[j]\par
+                upperstring.push(last_string)\par
+            \}\par
+\par
+        \}\par
+        var join = upperstring.join("")\par
+        result.push(join)\par
+        upperstring.splice(0, upperstring.length);\par
+\par
+    \}\par
+    console.log(result)\par
+\})(string)\par
+\cf1\b Return all the palindromes in an array in \cf0 anonymous\par
+\b0 var string=["hih", "civic", "guvi"]\par
+ var char\par
+ var stringlist=[]\par
+ var palindromes =[]\par
+ var palindromeslist=function(string)\par
+ \{\par
+   for(var i=0;i<string.length;i++)\par
+ \{\par
+   char=[...string[i]]\par
+   for(var j=0;j<char.length;j++)\par
+   \{\par
+     if(char[j]===char[char.length-1-j])\par
+     \{\par
+       var first_string=char[j]\par
+         stringlist.push(first_string)\par
+     \}       \par
+   \}\par
+   var join=stringlist.join("")\par
+   palindromes.push(join)\par
+   stringlist.splice(0, stringlist.length);  \par
+  \}\par
+  return palindromes\par
+ \}\par
+ \par
+ console.log(palindromeslist(string))\par
+\cf1\b Return all the palindromes in an array in \cf0 IFFE\par
+\b0 var string=["hih", "civic", "guvi"]\par
+ var char\par
+ var stringlist=[]\par
+ var palindromes =[];\par
+ (function(string) \{\par
+    for(var i=0;i<string.length;i++)\par
+ \{\par
+   char=[...string[i]]\par
+   for(var j=0;j<char.length;j++)\par
+   \{\par
+     \par
+     if(char[j]===char[char.length-1-j])\par
+     \{\par
+       var first_string=char[j]\par
+         stringlist.push(first_string)\par
+     \}    \par
+   \}\par
+   var join=stringlist.join("")\par
+   palindromes.push(join)\par
+   stringlist.splice(0, stringlist.length);\par
+  \}\par
+  console.log(palindromes)\par
+\})(string);\par
+\b Return all the prime numbers in an array anonymous function  \par
+\b0\par
+var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]\par
+\par
+ var primeno=function(numArray)\par
+   \{\par
+numArray = numArray.filter((number) => \{\par
+  for (var i = 2; i <= Math.sqrt(number); i++) \{\par
+    if (number % i === 0) return false;\par
+  \}\par
+  return true;\par
+\});\par
+return numArray\par
+\}\par
+console.log(primeno(numArray));\par
+\b Return all the prime numbers in an array IIFE\par
+\b0  var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]\par
+ (function(numArray)\{\par
+  numArray = numArray.filter((number) => \{\par
+  for (var i = 2; i <= Math.sqrt(number); i++) \{\par
+    if (number % i === 0) return false;\par
+  \}\par
+  return true;\par
+\});\par
+console.log( numArray)\par
+ \par
+ \})(numArray)\par
+\b Sum of all numbers in an array anonymous function\par
+\b0 var arr = [5, 4, 6, 7]\par
+var sum = 0;\par
+var sumofNum = function(arr) \{\par
+    for (var i = 0; i < arr.length; i++)\par
+        sum = sum + arr[i]\par
+    return sum\par
+\}\par
+console.log(sumofNum(arr))\par
+\b Sum of all numbers in an array IFFE function\par
+\b0 var arr = [5, 4, 6, 7]\par
+var sum = 0;\par
+(function(arr) \{\par
+    for (i = 0; i < arr.length; i++) \{\par
+        sum = sum + arr[i]\par
+    \}\par
+    console.log(sum)\par
+\})(arr);\par
+\b Rotate an array by k times anonymous function\par
+\b0 var arr = [5, 4, 6, 7]\par
+var k = 2\par
+var temp;\par
+var rotatearray = function(arr, k) \{\par
+    for (var i = 0; i < k; i++) \{\par
+        temp = arr[0];\par
+        for (var j = 0; j < arr.length - 1; j++)\par
+            arr[j] = arr[j + 1];\par
+        arr[arr.length - 1] = temp;\par
+    \}\par
+    return arr.join(" ")\par
+\}\par
+\par
+console.log(rotatearray(arr, k))\par
+\b Rotate an array by k times IFFE function\par
+\b0 var arr = [5, 4, 6, 7]\par
+var k = 2\par
+var temp;\par
+(function(arr, k) \{\par
+    for (var i = 0; i < k; i++) \{\par
+        temp = arr[0];\par
+        for (var j = 0; j < arr.length - 1; j++)\par
+            arr[j] = arr[j + 1];\par
+        arr[arr.length - 1] = temp;\par
+    \}\par
+    console.log(arr.join(" "))\par
+\})(arr, k);\par
+\par
+\b Remove duplicates from an array anonymous function\par
+\b0\par
+const arr = [1, 2, 3, 2, 3];\par
+var getUnique = function(arr) \{\par
+    let uniqueArr = [];\par
+    for (let i of arr) \{\par
+        if (uniqueArr.indexOf(i) === -1) \{\par
+            uniqueArr.push(i);\par
+        \}\par
+    \}\par
+    return uniqueArr;\par
+\}\par
+console.log(getUnique(arr));\par
+\par
+\b Remove duplicates from an array IFFE function\par
+\b0 const arr = [1, 2, 3, 2, 3];\par
+(function(arr) \{\par
+    let uniqueArr = [];\par
+    for (let i of arr) \{\par
+        if (uniqueArr.indexOf(i) === -1) \{\par
+            uniqueArr.push(i);\par
+        \}\par
+    \}\par
+    console.log(uniqueArr)\par
+\})(arr);\par
+\b Return median of two sorted arrays of the same size anonymous function\par
+\b0\par
+var arr1 = [1, 2, 12, 13, 15];\par
+var arr2 = [17, 26, 30, 38, 45];\par
+var arr1 = [...arr1, ...arr2]\par
+var medianofarray = function(arr1) \{\par
+    var value = arr1.length / 2\par
+    var m1 = arr1[value - 1]\par
+    var m2 = arr1[value]\par
+    var median = (m1 + m2) / 2\par
+    return median\par
+\}\par
+console.log(medianofarray(arr1))\par
+\par
+\par
+\b Return median of two sorted arrays of the same size IFFE function\par
+\b0\par
+var arr1 = [1, 2, 12, 13, 15];\par
+var arr2 = [17, 26, 30, 38, 45];\par
+var arr1 = [...arr1, ...arr2];\par
+(function(arr1) \{\par
+    var value = arr1.length / 2\par
+    var m1 = arr1[value - 1]\par
+    var m2 = arr1[value]\par
+    var median = (m1 + m2) / 2\par
+    console.log(median)\par
+\})(arr1);\par
+\par
+\par
+\b Do the below programs in arrow functions\par
+\b0\par
+\b Print odd numbers in an array\par
+\b0 var number = [2, 3, 4, 1, 51, 6, 7]\par
+var oddno = []\par
+var oddnumber = (number) => \{\par
+    for (var i = 0; i < number.length; i++) \{\par
+        if (number[i] % 2 === 1)\par
+            oddno.push(number[i])\par
+    \}\par
+    return oddno\par
+\}\par
+console.log(oddnumber(number))\par
+\par
+\b Sum of all numbers in an array\par
+\b0 var arr = [5, 4, 6, 7]\par
+var sum = 0;\par
+var sumofnum = (arr) => \{\par
+    for (var i = 0; i < arr.length; i++)\par
+        sum = sum + arr[i]\par
+    return sum\par
+\}\par
+console.log(sumofnum(arr) \par
+\b Convert all the strings to title caps in a string array\par
+\b0\par
+        var string = ["hi", "welcome", "guvi"]\par
+        var char\par
+        var upperstring = []\par
+        var result = [];\par
+        var titlecap = (string) => \{\par
+            for (var i = 0; i < string.length; i++) \{\par
+                char = [...string[i]]\par
+\par
+                for (var j = 0; j < char.length; j++) \{\par
+                    let index = char.indexOf(char[j]);\par
+\par
+                    if (index == 0) \{\par
+                        var first_string = char[j].toUpperCase()\par
+                        upperstring.push(first_string)\par
+                    \} else \{\par
+                        var last_string = char[j]\par
+                        upperstring.push(last_string)\par
+                    \}\par
+\par
+                \}\par
+                var join = upperstring.join("")\par
+                result.push(join)\par
+                upperstring.splice(0, upperstring.length);\par
+\par
+            \}\par
+            return result\par
+\par
+        \}\par
+        console.log(titlecap(string))\par
+\b\par
+\pard\sl240\slmult1\cf1 Return all the palindromes in an array\par
+\b0\par
+\pard\sa160\sl240\slmult1\cf0 var string=["hih", "civic", "guvi"]\par
+ var char\par
+ var stringlist=[]\par
+ var palindromes =[];\par
+var palindromeslist=(string)=>\{\par
+   for(var i=0;i<string.length;i++)\par
+ \{\par
+   char=[...string[i]]\par
+   for(var j=0;j<char.length;j++)\par
+   \{  \par
+     if(char[j]===char[char.length-1-j])\par
+     \{\par
+       var first_string=char[j]\par
+         stringlist.push(first_string)\par
+     \}   \par
+   \}\par
+   var join=stringlist.join("")\par
+   palindromes.push(join)\par
+   stringlist.splice(0, stringlist.length);\par
+  \}\par
+  return palindromes\par
+\} \par
+ console.log(palindromeslist(string))\par
+\pard\sl240\slmult1\cf1\b Return all the prime numbers in an array\par
+\b0\par
+\pard\sa160\sl240\slmult1\cf0 var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]\par
+var primeno=(NumArray)=>\{\par
+   numArray = numArray.filter((number) => \{\par
+  for (var i = 2; i <= Math.sqrt(number); i++) \{\par
+    if (number % i === 0) return false;\par
+  \}\par
+  return true;\par
+\});\par
+return numArray\par
+   \}\par
+   console.log(primeno(numArray));\par
+\par
+\pard\sb144\sl240\slmult1\cf2\highlight3\expndtw-4\b GUVI : Zen Code-Sprints :\emdash  JavaScript Functions \emdash  Warmup Pbms\par
+\pard\sa160\sl240\slmult1\cf0\highlight0\expndtw0\b0\par
+\par
+\cf2\highlight3\expndtw-1 1.Write a function called \ldblquote addFive\rdblquote .\highlight0\line\highlight3 Given a number, \ldblquote addFive\rdblquote  returns 5 added to that number.\par
+\par
+\cf0\highlight0\expndtw0  var num = 10;\par
+function addFive(num) \{ \par
+  return num+5\par
+\}\par
+var result = addFive(num)\par
+\par
+\cf2\highlight3\expndtw-1 2.Write a function called \ldblquote getOpposite\rdblquote .\highlight0\line\highlight3 Given a number, return its opposite\par
+\par
+\cf0\highlight0\expndtw0 var num = 5;\par
+function getOpposite(num) \{\par
+if(Number.isInteger(num))\par
+\{return num*(-1);\par
+\}\par
+else()\par
+\{return -1\par
+\}\par
+\}\par
+var result = getOpposite(num)\par
+\par
+\cf2\highlight3\expndtw-1 3.Fill in your code that takes an number minutes and converts it to seconds.\par
+\cf0\highlight0\expndtw0 var min = 5;\par
+function toSeconds(min) \{return min*60;\}\par
+var secs = toSeconds(min)\par
+\par
+\cf2\highlight3\expndtw-1 4.Create a function that takes a string and returns it as an integer.\par
+\cf0\highlight0\expndtw0 var mystr = "5";\par
+function toInteger(mystr) \{return parseInt(mystr);\}\par
+var myint = toInteger(mystr)\par
+\par
+\cf2\highlight3\expndtw-1 5.Create a function that takes a number as an argument, increments the number by +1 and returns the result\par
+\par
+\cf0\highlight0\expndtw0 var myint = 0;\par
+function nextNumber(myint) \{return myint+1;\}\par
+var myNextint = nextNumber(myint)\par
+\pard\sa200\sl276\slmult1\fs22\par
+}
+ 

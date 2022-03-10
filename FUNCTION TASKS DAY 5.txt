@@ -1,0 +1,403 @@
+Do the below programs in anonymous function & IIFE
+
+Print odd numbers in an array anonymous function
+
+var number = [2, 3, 4, 1, 51, 6, 7]
+var oddno = []
+var oddnumber = function(number) {
+    for (var i = 0; i < number.length; i++) {
+        if (number[i] % 2 === 1)
+            oddno.push(number[i])
+    }
+    return oddno
+}
+console.log(oddnumber(number))
+
+Print odd numbers in an array IIFE function
+
+var number = [2, 3, 4, 1, 51, 6, 7]
+var oddno = [];
+(function(number) {
+    for (i = 0; i < number.length; i++) {
+        if (number[i] % 2 === 1)
+            oddno.push(number[i])
+    }
+    console.log(oddno)
+})(number);
+
+Convert all the strings to title caps in a string array anonymous
+function
+var string = ["hi", "welcome", "guvi"]
+var char
+var upperstring = []
+var result = []
+var titlecaps = function(string) {
+    for (var i = 0; i < string.length; i++) {
+
+        char = [...string[i]]
+
+        for (var j = 0; j < char.length; j++) {
+            let index = char.indexOf(char[j]);
+
+            if (index == 0) {
+                var first_string = char[j].toUpperCase()
+                upperstring.push(first_string)
+            } else {
+                var last_string = char[j]
+                upperstring.push(last_string)
+            }
+        }
+        var join = upperstring.join("")
+        result.push(join)
+        upperstring.splice(0, upperstring.length);
+
+    }
+    return result
+}
+
+console.log(titlecaps(string))
+
+Convert all the strings to title caps in a string array IFFE function
+
+var string = ["hi", "welcome", "guvi"]
+
+var char
+var upperstring = []
+var result = [];
+(function(string) {
+    for (var i = 0; i < string.length; i++) {
+
+        char = [...string[i]]
+
+        for (var j = 0; j < char.length; j++) {
+            let index = char.indexOf(char[j]);
+
+            if (index == 0) {
+                var first_string = char[j].toUpperCase()
+                upperstring.push(first_string)
+            } else {
+                var last_string = char[j]
+                upperstring.push(last_string)
+            }
+
+        }
+        var join = upperstring.join("")
+        result.push(join)
+        upperstring.splice(0, upperstring.length);
+
+    }
+    console.log(result)
+})(string)
+Return all the palindromes in an array in anonymous
+var string=["hih", "civic", "guvi"]
+ var char
+ var stringlist=[]
+ var palindromes =[]
+ var palindromeslist=function(string)
+ {
+   for(var i=0;i<string.length;i++)
+ {
+   char=[...string[i]]
+   for(var j=0;j<char.length;j++)
+   {
+     if(char[j]===char[char.length-1-j])
+     {
+       var first_string=char[j]
+         stringlist.push(first_string)
+     }       
+   }
+   var join=stringlist.join("")
+   palindromes.push(join)
+   stringlist.splice(0, stringlist.length);  
+  }
+  return palindromes
+ }
+ 
+ console.log(palindromeslist(string))
+Return all the palindromes in an array in IFFE
+var string=["hih", "civic", "guvi"]
+ var char
+ var stringlist=[]
+ var palindromes =[];
+ (function(string) {
+    for(var i=0;i<string.length;i++)
+ {
+   char=[...string[i]]
+   for(var j=0;j<char.length;j++)
+   {
+     
+     if(char[j]===char[char.length-1-j])
+     {
+       var first_string=char[j]
+         stringlist.push(first_string)
+     }    
+   }
+   var join=stringlist.join("")
+   palindromes.push(join)
+   stringlist.splice(0, stringlist.length);
+  }
+  console.log(palindromes)
+})(string);
+Return all the prime numbers in an array anonymous function  
+
+var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+ var primeno=function(numArray)
+   {
+numArray = numArray.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+return numArray
+}
+console.log(primeno(numArray));
+Return all the prime numbers in an array IIFE
+ var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+ (function(numArray){
+  numArray = numArray.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+console.log( numArray)
+ 
+ })(numArray)
+Sum of all numbers in an array anonymous function
+var arr = [5, 4, 6, 7]
+var sum = 0;
+var sumofNum = function(arr) {
+    for (var i = 0; i < arr.length; i++)
+        sum = sum + arr[i]
+    return sum
+}
+console.log(sumofNum(arr))
+Sum of all numbers in an array IFFE function
+var arr = [5, 4, 6, 7]
+var sum = 0;
+(function(arr) {
+    for (i = 0; i < arr.length; i++) {
+        sum = sum + arr[i]
+    }
+    console.log(sum)
+})(arr);
+Rotate an array by k times anonymous function
+var arr = [5, 4, 6, 7]
+var k = 2
+var temp;
+var rotatearray = function(arr, k) {
+    for (var i = 0; i < k; i++) {
+        temp = arr[0];
+        for (var j = 0; j < arr.length - 1; j++)
+            arr[j] = arr[j + 1];
+        arr[arr.length - 1] = temp;
+    }
+    return arr.join(" ")
+}
+
+console.log(rotatearray(arr, k))
+Rotate an array by k times IFFE function
+var arr = [5, 4, 6, 7]
+var k = 2
+var temp;
+(function(arr, k) {
+    for (var i = 0; i < k; i++) {
+        temp = arr[0];
+        for (var j = 0; j < arr.length - 1; j++)
+            arr[j] = arr[j + 1];
+        arr[arr.length - 1] = temp;
+    }
+    console.log(arr.join(" "))
+})(arr, k);
+
+Remove duplicates from an array anonymous function
+
+const arr = [1, 2, 3, 2, 3];
+var getUnique = function(arr) {
+    let uniqueArr = [];
+    for (let i of arr) {
+        if (uniqueArr.indexOf(i) === -1) {
+            uniqueArr.push(i);
+        }
+    }
+    return uniqueArr;
+}
+console.log(getUnique(arr));
+
+Remove duplicates from an array IFFE function
+const arr = [1, 2, 3, 2, 3];
+(function(arr) {
+    let uniqueArr = [];
+    for (let i of arr) {
+        if (uniqueArr.indexOf(i) === -1) {
+            uniqueArr.push(i);
+        }
+    }
+    console.log(uniqueArr)
+})(arr);
+Return median of two sorted arrays of the same size anonymous function
+
+var arr1 = [1, 2, 12, 13, 15];
+var arr2 = [17, 26, 30, 38, 45];
+var arr1 = [...arr1, ...arr2]
+var medianofarray = function(arr1) {
+    var value = arr1.length / 2
+    var m1 = arr1[value - 1]
+    var m2 = arr1[value]
+    var median = (m1 + m2) / 2
+    return median
+}
+console.log(medianofarray(arr1))
+
+
+Return median of two sorted arrays of the same size IFFE function
+
+var arr1 = [1, 2, 12, 13, 15];
+var arr2 = [17, 26, 30, 38, 45];
+var arr1 = [...arr1, ...arr2];
+(function(arr1) {
+    var value = arr1.length / 2
+    var m1 = arr1[value - 1]
+    var m2 = arr1[value]
+    var median = (m1 + m2) / 2
+    console.log(median)
+})(arr1);
+
+
+Do the below programs in arrow functions
+
+Print odd numbers in an array
+var number = [2, 3, 4, 1, 51, 6, 7]
+var oddno = []
+var oddnumber = (number) => {
+    for (var i = 0; i < number.length; i++) {
+        if (number[i] % 2 === 1)
+            oddno.push(number[i])
+    }
+    return oddno
+}
+console.log(oddnumber(number))
+
+Sum of all numbers in an array
+var arr = [5, 4, 6, 7]
+var sum = 0;
+var sumofnum = (arr) => {
+    for (var i = 0; i < arr.length; i++)
+        sum = sum + arr[i]
+    return sum
+}
+console.log(sumofnum(arr) 
+Convert all the strings to title caps in a string array
+
+        var string = ["hi", "welcome", "guvi"]
+        var char
+        var upperstring = []
+        var result = [];
+        var titlecap = (string) => {
+            for (var i = 0; i < string.length; i++) {
+                char = [...string[i]]
+
+                for (var j = 0; j < char.length; j++) {
+                    let index = char.indexOf(char[j]);
+
+                    if (index == 0) {
+                        var first_string = char[j].toUpperCase()
+                        upperstring.push(first_string)
+                    } else {
+                        var last_string = char[j]
+                        upperstring.push(last_string)
+                    }
+
+                }
+                var join = upperstring.join("")
+                result.push(join)
+                upperstring.splice(0, upperstring.length);
+
+            }
+            return result
+
+        }
+        console.log(titlecap(string))
+
+Return all the palindromes in an array
+
+var string=["hih", "civic", "guvi"]
+ var char
+ var stringlist=[]
+ var palindromes =[];
+var palindromeslist=(string)=>{
+   for(var i=0;i<string.length;i++)
+ {
+   char=[...string[i]]
+   for(var j=0;j<char.length;j++)
+   {  
+     if(char[j]===char[char.length-1-j])
+     {
+       var first_string=char[j]
+         stringlist.push(first_string)
+     }   
+   }
+   var join=stringlist.join("")
+   palindromes.push(join)
+   stringlist.splice(0, stringlist.length);
+  }
+  return palindromes
+} 
+ console.log(palindromeslist(string))
+Return all the prime numbers in an array
+
+var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+var primeno=(NumArray)=>{
+   numArray = numArray.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+return numArray
+   }
+   console.log(primeno(numArray));
+
+GUVI : Zen Code-Sprints :— JavaScript Functions — Warmup Pbms
+
+
+1.Write a function called “addFive”.
+Given a number, “addFive” returns 5 added to that number.
+
+ var num = 10;
+function addFive(num) { 
+  return num+5
+}
+var result = addFive(num)
+
+2.Write a function called “getOpposite”.
+Given a number, return its opposite
+
+var num = 5;
+function getOpposite(num) {
+if(Number.isInteger(num))
+{return num*(-1);
+}
+else()
+{return -1
+}
+}
+var result = getOpposite(num)
+
+3.Fill in your code that takes an number minutes and converts it to seconds.
+var min = 5;
+function toSeconds(min) {return min*60;}
+var secs = toSeconds(min)
+
+4.Create a function that takes a string and returns it as an integer.
+var mystr = "5";
+function toInteger(mystr) {return parseInt(mystr);}
+var myint = toInteger(mystr)
+
+5.Create a function that takes a number as an argument, increments the number by +1 and returns the result
+
+var myint = 0;
+function nextNumber(myint) {return myint+1;}
+var myNextint = nextNumber(myint)
